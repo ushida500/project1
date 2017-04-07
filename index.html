@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TakeTheCake!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  </head>
+
+  <body id="bg">
+    <h1>Let's Play: Take The Cake!</h1>
+    <div id="board">
+      <div><img src="./images/4543690-vector-birthday-cake-with-burning-candles.jpg"></div>
+      <div><img src="./images/LTKk6GRjc.jpeg"></div>
+      <div><img src="./images/kakku.png"></div>
+      <div class="btn 4"><img src="./images/7b8cf65bd9a862946016ca1a4937b551_cute-birthday-cake-clipart-picture-birthday-cake-clip-art_554-600.jpeg"></div>
+      <div><img src="./images/b5e821be77bd71dde10a716750cfd90b_happy-birthday-cake-animated-animated-happy-birthday-cake-clip-art_700-700.gif"></div>
+      <div class="btn 6"><img src="./images/7b8cf65bd9a862946016ca1a4937b551_cute-birthday-cake-clipart-picture-birthday-cake-clip-art_554-600.jpeg"></div>
+      <div><img src="./images/14413754-Birthday-cake-Stock-Vector-cartoon.jpg"></div>
+      <div class="btn 8"><img src="./images/4624695-vector-big-birthday-cake-with-burning-candles-and-fruits.jpg"></div>
+      <div><img src="./images/animated-birthday-cake-animated-gif-showing-candles-on-a-birthday-cake-being-blown-out-as-someone-makes-a-secret-elegance-eksotic.jpg"></div>
+      <div><img src="./images/download.png"></div>
+      <div class="btn 11"><img src="./images/4624695-vector-big-birthday-cake-with-burning-candles-and-fruits.jpg"></div>
+      <div><img src="./images/acqLAMKgi.jpg"></div>
+    </div>
+    <h2>Hey, players!</h2>
+    <h3>In 15 seconds or less, find the<span style="color:#ff0000"> 2 cakes </span>with the same look.</h3>
+    <h3>If you find it, the background will turn <span style="color:#ff0000">RED.</span></h3>
+    <h3>And if you are playing alone, you'll <span style="color:#ff0000">find 4 cakes!</span></h3>
+    <div class="counter">
+      SCORE
+    </div>
+
+    <script>
+    var players = [ {name: "p1", score: 0}, {name: "p2", score: 0} ]
+    var currentPlayer = players[0]
+
+    $('.btn').on('click', function() {
+      // var imageValue = $(this).find('img').attr('src')
+      // this.style.backgroundColor = '#ff0000';
+      // console.log(imageValue)
+      $(this).addClass('redSquare')
+      var totalRedSquares = $('.redSquare').length
+      console.log(totalRedSquares);
+
+      if ('totalRedSquares' == 4) {
+        currentPlayer.score = counter
+        //$('totalRedSquares').on('click', function() {
+        // console.log( $(this).text("Winner!") );
+        // });
+      }
+    });
+
+    var counter = 0
+
+    var timerVar = setInterval(increaseCounter, 1000)
+
+    function increaseCounter(){
+	     counter++;
+      //  console.log("counter: " + counter);
+       $('.counter').text('SCORE: '+ counter);
+          if (counter == 15) {
+          console.log("Timer should end here");
+          clearInterval(timerVar);
+        }
+    }
+
+    // THIS IS A PRACTICE I DID TO REMEMBER HOW TO STRUCTURE FUNCTIONS!
+    // THE CLASSIC "EVENT LISTENER" USING JAVASCRIPT:
+        // document.getElementById("button4").addEventListener("click", function(){
+        //   alert("Yes!");
+        // });
+        //
+        // document.getElementById("button6").addEventListener("click", function(){
+        //   alert("Winner!");
+        // });
+        //
+        // document.getElementById("button8").addEventListener("click", function(){
+        //   alert("Yes!");
+        // });
+        //
+        // document.getElementById("button11").addEventListener("click", function(){
+        //   alert("Winner!");
+        // });
+    </script>
+  </body>
+</html>
