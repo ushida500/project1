@@ -39,7 +39,7 @@ h2 {
   -webkit-animation-duration: 3s;
   animation-name: h2;
   animation-duration: 3s;
-  animation-iteration-count: 7;
+  animation-iteration-count: 8;
 }
 
 @keyframes h2 {
